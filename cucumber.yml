@@ -1,0 +1,4 @@
+default: --format html --out report.html
+progress: --format progress --color --strict
+json: --format json -o reports/report.json --color --strict
+html: --format html -o reports/report.html --color --strict
