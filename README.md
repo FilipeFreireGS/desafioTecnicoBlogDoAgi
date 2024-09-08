@@ -32,7 +32,11 @@ $ gem install bundler
 
 ### 🔧 Baixar o projeto do repositório remoto 
 
-Executar o comando git clone "EDITAR" para baixar o repositório localmente.
+Executar o coomando abaixo para baixar o repositório localmente:
+
+```
+git clone https://github.com/FilipeFreireGS/desafioTecnicoBlogDoAgi.git 
+```
 
 ### 🔧 Instalação das dependências
 
