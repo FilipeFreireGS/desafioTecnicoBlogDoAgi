@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	stages {
-		stage('version){
+		stage('version'){
 			steps {
 				sh 'ruby --version'
 			}
