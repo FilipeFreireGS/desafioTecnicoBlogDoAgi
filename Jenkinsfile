@@ -1,15 +1,11 @@
+/* Requires the Docker Pipeline plugin */
 pipeline {
-	agent any
-	stages {
-		stage('version'){
-			steps {
-				sh 'ruby --version'
-			}
-		}
-		stage('hello'){
-			steps {
-				sh 'ruby Hello.rb'
-			}
-		}
-	}
+    agent { docker { image 'ruby:3.3.5-alpine3.20' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'ruby --version'
+            }
+        }
+    }
 }
