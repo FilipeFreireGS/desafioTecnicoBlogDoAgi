@@ -42,5 +42,5 @@ Cenário: "<id>": Verifica responsividade da tela ("<dispositivo>")
   Exemplos:
       |id        | altura | largura | texto        | dispositivo   |
       | CT03-001 | 1024   | 926     | investimento | laptop 1024px |         
-    # | CT03-002 | 768    | 617     | investimento | tablet 768px  |
+      | CT03-002 | 768    | 617     | investimento | tablet 768px  |
     #  Cenario CT03-002 identificou um erro. O ícone da lupa desaparece quando a tela é diminuída horizontalmente.
