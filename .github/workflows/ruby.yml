@@ -1,0 +1,36 @@
+# Este workflow usa ações que não são certificadas pelo GitHub.
+# Elas são fornecidas por terceiros e estão sujeitas a
+# termos de serviço, política de privacidade e documentação de suporte
+# separados.
+# Este workflow fará o download de uma versão pré-compilada do Ruby, instalará as dependências e executará os testes com o Rake.
+# Para mais informações, veja: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+
+name: Ruby
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        ruby-version: ['2.6', '2.7', '3.0']
+
+    steps:
+    - uses: actions/checkout@v4
+      name: Fazer checkout do código
+    - name: Configurar Ruby
+      uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+        bundler-cache: true # Executa 'bundle install' e faz cache das gems instaladas automaticamente
+    - name: Rodar testes
+      run: bundle exec rake
+      shell: pwsh
